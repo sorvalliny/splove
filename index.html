@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>СПLOVE · Архив сплавов</title>
+<meta name="description" content="Пять лет на воде: Тверца и Волга, 2022–2026. Как это было, из чего состоит лагерь и когда откроется запись на 2027 год.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#E9EFEF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1618" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="СПLOVE · Пять лет на воде">
+<meta property="og:description" content="Архив сплавов 2022–2026: Тверца и Волга, от первого заплыва до 52 человек. Запись на 2027 откроется весной.">
+<meta property="og:image" content="https://sorvalliny.github.io/splove/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%9B%B6%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --mist:#E9EFEF; --paper:#F7FBFB; --paper-2:#D8E4E5;
+  --ink:#101E22; --ink-soft:#36484C; --muted:#697B7F;
+  --line:#CAD8D9; --line-strong:#ADC1C3;
+  --ember:#BE4F26; --ember-ink:#9E4020; --river:#1B5A61; --deep:#0D1618;
+  --shadow:0 1px 0 rgba(16,30,34,.03), 0 16px 38px -22px rgba(16,30,34,.4);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --mist:#0D1618; --paper:#141F22; --paper-2:#1C292C;
+    --ink:#E6EFEF; --ink-soft:#B3C4C6; --muted:#87999C;
+    --line:#26363A; --line-strong:#374B4F;
+    --ember:#E8804F; --ember-ink:#F09965; --river:#6FB2B8; --deep:#060C0D;
+    --shadow:0 1px 0 rgba(0,0,0,.3), 0 18px 40px -22px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  --mist:#0D1618; --paper:#141F22; --paper-2:#1C292C;
+  --ink:#E6EFEF; --ink-soft:#B3C4C6; --muted:#87999C;
+  --line:#26363A; --line-strong:#374B4F;
+  --ember:#E8804F; --ember-ink:#F09965; --river:#6FB2B8; --deep:#060C0D;
+  --shadow:0 1px 0 rgba(0,0,0,.3), 0 18px 40px -22px rgba(0,0,0,.9);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--mist);color:var(--ink);
+  font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.66;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.narrow{max-width:680px}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+h1{font-family:Oswald,"Arial Narrow",sans-serif;font-weight:500;text-transform:uppercase;
+  font-size:clamp(3rem,9vw,6.4rem);line-height:.94;letter-spacing:.005em}
+h2{font-family:Oswald,"Arial Narrow",sans-serif;font-weight:400;text-transform:uppercase;
+  font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.06;letter-spacing:.02em}
+h3{font-size:1.04rem;font-weight:600}
+p{margin:0}
+.eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;font-weight:500;
+  text-transform:uppercase;letter-spacing:.2em;color:var(--muted)}
+.num{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--ember-ink);text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ember);outline-offset:3px;border-radius:2px}
+
+section{padding:clamp(54px,7vw,88px) 0}
+section+section{border-top:1px solid var(--line)}
+.head{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.stack{display:flex;flex-direction:column;gap:20px}
+
+/* ── линия воды между секциями ── */
+.wave{display:block;width:100%;height:16px;color:var(--river);opacity:.55}
+
+/* ── бренд-бар ── */
+.topbar{border-bottom:1px solid var(--line);background:var(--paper)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:15px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.brand svg{width:36px;height:36px;color:var(--ember);flex:none}
+.brand-txt{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font-family:Oswald,sans-serif;font-size:1.34rem;font-weight:500;text-transform:uppercase;
+  letter-spacing:.04em}
+.brand-by{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.58rem;text-transform:uppercase;
+  letter-spacing:.22em;color:var(--muted)}
+.umbrella{display:flex;flex-wrap:wrap;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.63rem;text-transform:uppercase;letter-spacing:.17em;color:var(--muted)}
+.umbrella span{padding:0 13px;border-right:1px solid var(--line-strong)}
+.umbrella span:last-child{border-right:0;padding-right:0}
+.umbrella .on{color:var(--ember-ink);font-weight:500}
+
+/* ── герой ── */
+.hero{position:relative;padding:0;border-bottom:1px solid var(--line)}
+.hero-media{position:relative;min-height:clamp(430px,64vh,660px);display:flex;align-items:flex-end;
+  background:var(--deep);overflow:hidden}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72}
+.hero-shade{position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(13,22,24,.42) 0%, rgba(13,22,24,.22) 38%, rgba(13,22,24,.9) 100%)}
+.hero-in{position:relative;width:100%;padding:0 0 clamp(28px,4vw,44px)}
+.hero h1{color:#F4F8F8;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--ember)}
+.hero .eyebrow{color:#B9CACB}
+.hero-lead{color:#DCE7E7;font-size:1.1rem;max-width:40ch;margin-top:16px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);margin-top:28px;
+  border-top:1px solid rgba(255,255,255,.22)}
+@media(min-width:900px){.facts{grid-template-columns:repeat(4,auto);justify-content:start}}
+.fact{padding:14px 0}
+.fact:nth-child(odd){border-right:1px solid rgba(255,255,255,.22);padding-right:22px}
+.fact:nth-child(even){padding-left:22px}
+.fact:nth-child(n+3){border-top:1px solid rgba(255,255,255,.22)}
+@media(min-width:900px){
+  .fact{padding:14px 24px 14px 0;margin-right:24px;border-right:1px solid rgba(255,255,255,.22)}
+  .fact:nth-child(even){padding-left:0}
+  .fact:nth-child(n+3){border-top:0}
+  .fact:last-child{border-right:0;margin-right:0;padding-right:0}
+}
+.fact dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;text-transform:uppercase;
+  letter-spacing:.18em;color:#A9BCBE;margin-bottom:5px}
+.fact dd{margin:0;font-size:1.02rem;font-weight:500;color:#F4F8F8;white-space:nowrap}
+
+@media (prefers-reduced-motion: no-preference){
+  .hero h1,.hero-lead,.hero .facts,.hero .eyebrow{animation:rise .75s cubic-bezier(.2,.7,.3,1) backwards}
+  .hero .eyebrow{animation-delay:.05s} .hero h1{animation-delay:.12s}
+  .hero-lead{animation-delay:.2s} .hero .facts{animation-delay:.28s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}}
+}
+
+/* ── капитан ── */
+.captain{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+@media(min-width:560px){.captain{max-width:520px;margin-inline:auto}}
+@media(min-width:900px){.captain{grid-template-columns:300px 1fr;gap:54px;max-width:none;margin-inline:0}}
+.reel{margin:0;display:flex;flex-direction:column;gap:11px}
+.reel-frame{position:relative;border-radius:2px;overflow:hidden;border:1px solid var(--line-strong);
+  background:var(--paper-2);box-shadow:var(--shadow)}
+.reel video{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;background:var(--deep)}
+.sound{position:absolute;right:10px;bottom:10px;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.6rem;text-transform:uppercase;letter-spacing:.13em;color:#fff;cursor:pointer;
+  background:rgba(8,14,15,.62);border:1px solid rgba(255,255,255,.32);border-radius:100px;
+  padding:7px 13px;backdrop-filter:blur(6px);transition:background .15s ease}
+.sound:hover{background:rgba(8,14,15,.85)}
+.reel figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;
+  text-transform:uppercase;letter-spacing:.15em;color:var(--muted);text-align:center}
+.quote{border-left:2px solid var(--ember);padding:4px 0 4px 24px;font-size:1.14rem;line-height:1.6}
+.quote p+p{margin-top:14px}
+.sign{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;text-transform:uppercase;
+  letter-spacing:.16em;color:var(--muted);margin-top:18px}
+
+/* ── хроника ── */
+.years{display:flex;flex-direction:column}
+.yr{display:grid;grid-template-columns:1fr;gap:8px;padding:24px 0;border-top:1px solid var(--line);
+  align-items:baseline}
+.yr:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:720px){.yr{grid-template-columns:132px 190px 1fr;gap:28px}}
+.yr-n{font-family:Oswald,sans-serif;font-size:2.5rem;font-weight:500;line-height:.9;color:var(--ember)}
+.yr-meta{display:flex;flex-direction:column;gap:3px}
+.yr-river{font-weight:600;font-size:1rem}
+.yr-count{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.12em}
+.yr-note{color:var(--ink-soft);font-size:.97rem}
+.yr.now .yr-n{color:var(--river)}
+
+/* столбики роста */
+.growth{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end;
+  margin-top:34px;padding:22px 20px;background:var(--paper);border:1px solid var(--line);border-radius:2px}
+.bar{display:flex;flex-direction:column;align-items:center;gap:9px}
+.bar .col{width:100%;background:linear-gradient(180deg,var(--river),color-mix(in srgb,var(--river) 55%,transparent));
+  border-radius:2px 2px 0 0;min-height:5px}
+.bar.peak .col{background:linear-gradient(180deg,var(--ember),color-mix(in srgb,var(--ember) 55%,transparent))}
+.bar .v{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500;font-size:.94rem}
+.bar .y{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;color:var(--muted);
+  letter-spacing:.1em}
+.growth-cap{font-size:.82rem;color:var(--muted);margin-top:12px}
+
+/* ── лагерь ── */
+.camps{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:2px;overflow:hidden}
+@media(min-width:760px){.camps{grid-template-columns:repeat(3,1fr)}}
+.camp{background:var(--paper);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.camp .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.64rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ember)}
+.camp h3{font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase;font-size:1.24rem;
+  letter-spacing:.02em}
+.camp p{font-size:.95rem;color:var(--ink-soft)}
+.camp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;margin-top:auto}
+.camp li{padding:7px 0 7px 20px;position:relative;font-size:.9rem;color:var(--ink-soft);
+  border-top:1px solid var(--line)}
+.camp li::before{content:"";position:absolute;left:0;top:1em;width:8px;height:1.5px;background:var(--river)}
+
+.zones{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
+@media(min-width:700px){.zones{grid-template-columns:repeat(3,1fr)}}
+.zone{border:1px solid var(--line);border-radius:2px;padding:20px 22px;background:var(--paper);
+  display:flex;flex-direction:column;gap:8px}
+.zone .t{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+.zone h4{font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase;font-size:1.1rem}
+.zone p{font-size:.92rem;color:var(--ink-soft)}
+
+/* ── включено ── */
+.cols{display:grid;grid-template-columns:1fr;gap:30px}
+@media(min-width:760px){.cols{grid-template-columns:1fr 1fr;gap:48px}}
+ul.ticks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+ul.ticks li{padding:10px 0 10px 26px;border-bottom:1px solid var(--line);position:relative;
+  font-size:.96rem;color:var(--ink-soft)}
+ul.ticks li:first-child{border-top:1px solid var(--line)}
+ul.ticks li::before{content:"";position:absolute;left:2px;top:1.2em;width:9px;height:1.5px;background:var(--ember)}
+.price{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.price .v{font-family:Oswald,sans-serif;font-size:2.6rem;font-weight:500;color:var(--ember);line-height:1}
+.price .l{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;text-transform:uppercase;
+  letter-spacing:.16em;color:var(--muted)}
+
+.wide-shot{margin-top:40px}
+.wide-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:2px}
+.wide-shot figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;
+  text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:10px;text-align:center}
+
+/* ── галерея ── */
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:640px){.gal{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:960px){.gal{grid-template-columns:repeat(4,1fr)}}
+.gal figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.gal img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2px;
+  border:1px solid var(--line);background:var(--paper-2);
+  transition:transform .25s ease, border-color .25s ease}
+.gal figure:hover img{transform:translateY(-3px);border-color:var(--line-strong)}
+@media (prefers-reduced-motion: reduce){.gal figure:hover img{transform:none}}
+.gal figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6rem;
+  text-transform:uppercase;letter-spacing:.13em;color:var(--muted);line-height:1.5}
+
+/* ── 2027 ── */
+.next{background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;
+  padding:clamp(26px,4vw,44px);display:grid;grid-template-columns:1fr;gap:26px;align-items:center}
+@media(min-width:820px){.next{grid-template-columns:1.1fr .9fr;gap:44px}}
+.next h2{margin-bottom:14px}
+.next p{color:var(--ink-soft)}
+.next p+p{margin-top:12px}
+.closed{border:1px solid var(--line);border-radius:2px;padding:24px;background:var(--mist);
+  display:flex;flex-direction:column;gap:14px}
+.badge{display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;text-transform:uppercase;
+  letter-spacing:.16em;color:var(--muted);border:1px solid var(--line-strong);border-radius:100px;
+  padding:6px 13px}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--muted);display:block;font-style:normal}
+.btn{font-family:"IBM Plex Sans",sans-serif;font-size:.96rem;font-weight:500;padding:14px 24px;
+  border-radius:2px;border:1px solid var(--line-strong);background:var(--paper-2);color:var(--muted);
+  cursor:not-allowed;text-align:center}
+.next-note{font-size:.86rem;color:var(--muted)}
+
+footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 56px}
+.foot-brand{display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.foot-brand svg{width:42px;height:42px;color:var(--ember);flex:none}
+.foot-brand .brand-name{font-size:1.5rem}
+.foot-lines{display:flex;flex-wrap:wrap;gap:10px 0;border-top:1px solid var(--line);padding-top:20px}
+.foot-line{flex:1 1 190px;padding-right:24px}
+.foot-line dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;text-transform:uppercase;
+  letter-spacing:.17em;color:var(--ember-ink);margin-bottom:5px}
+.foot-line dd{margin:0;font-size:.88rem;color:var(--muted)}
+.foot-end{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;font-size:.84rem;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <defs>
+    <symbol id="mark" viewBox="0 0 48 48">
+      <path d="M6 30 C14 26 20 26 24 28 C28 30 34 30 42 26" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round"></path>
+      <path d="M6 36 C14 32 20 32 24 34 C28 36 34 36 42 32" fill="none" stroke="currentColor"
+            stroke-width="1.4" stroke-linecap="round" opacity=".55"></path>
+      <path d="M9 20 C16 24 32 24 39 20 C34 15 14 15 9 20 Z" fill="currentColor" opacity=".9"></path>
+      <path d="M24 17 V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+      <path d="M18 9 H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+    </symbol>
+    <pattern id="wv" x="0" y="0" width="52" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 11 C9 4 17 4 26 11 C35 18 43 18 52 11" fill="none" stroke="currentColor"
+            stroke-width="1.6" stroke-linecap="round"></path>
+    </pattern>
+  </defs>
+</svg>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <a class="brand" href="./">
+      <svg aria-hidden="true"><use href="#mark"></use></svg>
+      <span class="brand-txt">
+        <span class="brand-name">СПLOVE</span>
+        <span class="brand-by">by @Sorval</span>
+      </span>
+    </a>
+    <nav class="umbrella" aria-label="Направления">
+      <span class="on">Сплавы</span><span>Походы</span><span>Гастро-туры</span>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="hero-media">
+    <img src="media/hero.jpg" alt="Байдарки на реке во время сплава" width="1280" height="960">
+    <div class="hero-shade"></div>
+    <div class="hero-in">
+      <div class="wrap">
+        <p class="eyebrow">Архив · Тверская область</p>
+        <h1>Пять лет<br><em>на воде</em></h1>
+        <p class="hero-lead">Тверца и Волга, 2022–2026. От первого заплыва вдвоём до полусотни своих на байдарках.</p>
+        <dl class="facts">
+          <div class="fact"><dt>Сезонов</dt><dd class="num">5</dd></div>
+          <div class="fact"><dt>Рек</dt><dd>Тверца и Волга</dd></div>
+          <div class="fact"><dt>Рекорд</dt><dd class="num">52 человека</dd></div>
+          <div class="fact"><dt>Формат</dt><dd>3 дня, 2 ночи</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap captain">
+    <figure class="reel">
+      <div class="reel-frame">
+        <video id="reel" poster="media/reel-poster.jpg" muted loop playsinline preload="metadata"
+               aria-label="Видео со сплава СПLOVE 2026">
+          <source src="media/splove-2026.mp4" type="video/mp4">
+        </video>
+        <button class="sound" id="reel-sound" type="button" aria-pressed="false">Включить звук</button>
+      </div>
+      <figcaption>СПLOVE 2026 · Тверская область</figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow" style="margin-bottom:14px">Почему этот формат</p>
+      <blockquote class="quote">
+        <p>Это не спортивный поход, не коммерческая история и не фестиваль. Это выходные в сплочённой компании: днём вёсла и река, вечером костёр, гитара, баня и разговоры.</p>
+        <p>Зовём по принципу «свой человек»: расслабленных, доброжелательных, кто любит и не боится похода. Опыт гребли не нужен — нужен только правильный настрой.</p>
+        <p>Если ты новенький — тебя позвал кто-то из наших, и он за тебя ручается.</p>
+      </blockquote>
+      <p class="sign">Виктор Сорваль · капитан</p>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#wv)"></rect></svg>
+
+<section>
+  <div class="wrap">
+    <div class="head narrow">
+      <p class="eyebrow">Хроника</p>
+      <h2>Как росла флотилия</h2>
+      <p>Каждый год кто-то приводит своего человека — и на следующий год он уже приводит своего. Так двадцать превратились в полсотни.</p>
+    </div>
+
+    <div class="years">
+      <article class="yr">
+        <span class="yr-n num">2022</span>
+        <span class="yr-meta"><span class="yr-river">Тверца</span><span class="yr-count">первый заплыв</span></span>
+        <span class="yr-note">Меня позвали — и всё началось. Никакой организации, просто река и хорошая идея.</span>
+      </article>
+      <article class="yr">
+        <span class="yr-n num">2023</span>
+        <span class="yr-meta"><span class="yr-river">Тверца</span><span class="yr-count">20 человек</span></span>
+        <span class="yr-note">Первый раз, когда я собирал своих сам. Двадцать человек, палатки, костёр, гитара.</span>
+      </article>
+      <article class="yr">
+        <span class="yr-n num">2024</span>
+        <span class="yr-meta"><span class="yr-river">Волга</span><span class="yr-count">32 человека</span></span>
+        <span class="yr-note">Сменили реку и выросли в полтора раза. Появилась баня и передвижной лагерь на три точки.</span>
+      </article>
+      <article class="yr">
+        <span class="yr-n num">2025</span>
+        <span class="yr-meta"><span class="yr-river">Волга</span><span class="yr-count">52 человека</span></span>
+        <span class="yr-note">Рекорд по людям. Три кемпа, зоны под разный темперамент, караоке и лекторий.</span>
+      </article>
+      <article class="yr now">
+        <span class="yr-n num">2026</span>
+        <span class="yr-meta"><span class="yr-river">Тверская область</span><span class="yr-count">50 человек</span></span>
+        <span class="yr-note">14–16 августа. Половина списка — новички, которых привели свои. Семь пар.</span>
+      </article>
+    </div>
+
+    <div class="growth" role="img" aria-label="Рост числа участников: 2023 — 20, 2024 — 32, 2025 — 52, 2026 — 50">
+      <div class="bar"><span class="v">—</span><span class="col" style="height:14px"></span><span class="y">2022</span></div>
+      <div class="bar"><span class="v">20</span><span class="col" style="height:58px"></span><span class="y">2023</span></div>
+      <div class="bar"><span class="v">32</span><span class="col" style="height:92px"></span><span class="y">2024</span></div>
+      <div class="bar peak"><span class="v">52</span><span class="col" style="height:150px"></span><span class="y">2025</span></div>
+      <div class="bar"><span class="v">50</span><span class="col" style="height:144px"></span><span class="y">2026</span></div>
+    </div>
+    <p class="growth-cap">За 2022 год числа нет: тогда это был не сбор, а просто поездка вдвоём. Данные за 2023–2025 — со слов капитана, за 2026 — по списку участников.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head narrow">
+      <p class="eyebrow">Как устроено</p>
+      <h2>Передвижной лагерь</h2>
+      <p>Три дня — три разные локации. Между ними идём на байдарках, вещи едут сухими на машине сопровождения. Лагерь ставят и кормят организаторы, грести учат на месте: опыт не нужен.</p>
+    </div>
+
+    <div class="camps">
+      <article class="camp">
+        <span class="n">Кемп 1 · старт</span>
+        <h3>Заезд</h3>
+        <p>Трансфер из Москвы, четыре часа до Тверской области. Пеший маршрут до лагеря, заселение в палатки, поход за дровами.</p>
+        <ul>
+          <li>Ужин и вступительное слово</li>
+          <li>Костёр, гитара, дринки</li>
+          <li>Отбой после часа ночи</li>
+        </ul>
+      </article>
+      <article class="camp">
+        <span class="n">Кемп 2 · главный день</span>
+        <h3>Сплав 12–18 км</h3>
+        <p>Инструктаж и отплытие. Перекус на воде — бутерброды, фрукты и арбуз. К обеду приходим на новую точку.</p>
+        <ul>
+          <li>Походная баня и купание</li>
+          <li>Лекторий и кинопоказ на проекторе</li>
+          <li>Караоке, свободный микрофон</li>
+        </ul>
+      </article>
+      <article class="camp">
+        <span class="n">Кемп 3 · финал</span>
+        <h3>Сплав 12–15 км</h3>
+        <p>Последний отрезок реки, походный обед, купание. Крайние тосты за сплав и сбор вещей.</p>
+        <ul>
+          <li>Обед на берегу</li>
+          <li>Общая фотография</li>
+          <li>Трансфер в Москву</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="zones">
+      <div class="zone">
+        <span class="t">Зона у реки</span>
+        <h4>Вода и баня</h4>
+        <p>Походная баня, купание, пиво с казы. Самое людное место лагеря до заката.</p>
+      </div>
+      <div class="zone">
+        <span class="t">Тихая зона</span>
+        <h4>Чил и сон</h4>
+        <p>Кемпинги для сна, тишина после одиннадцати, лекторий от участников и кино на закате.</p>
+      </div>
+      <div class="zone">
+        <span class="t">Шумная зона</span>
+        <h4>Караоке и байки</h4>
+        <p>Минибар на джине, лобное место для рассказов, дранкпетанк и данкдартс.</p>
+      </div>
+    </div>
+
+    <figure class="wide-shot">
+      <img src="media/camp-wide.jpg" alt="Флотилия байдарок на берегу перед отплытием" width="1200" height="900" loading="lazy">
+      <figcaption>Сборы перед отплытием</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head narrow">
+      <p class="eyebrow">Бюджет прошлого сезона</p>
+      <h2>Что входило</h2>
+    </div>
+    <div class="price">
+      <span class="v num">25 000 ₽</span>
+      <span class="l">с человека за весь сплав, 2026 год</span>
+    </div>
+    <div class="cols">
+      <ul class="ticks">
+        <li>Байдарка, весло, спасжилет</li>
+        <li>Палатка, спальник, коврик</li>
+        <li>Трансфер из Москвы и обратно</li>
+        <li>Машина сопровождения — вещи едут сухими</li>
+        <li>Инструкторы и стафф, 5–7 человек</li>
+        <li>Организаторы ставят лагерь и готовят</li>
+      </ul>
+      <ul class="ticks">
+        <li>Питание три раза в день и перекусы на воде</li>
+        <li>Походная баня</li>
+        <li>Шатёр-кухня, костровая зона, туалет-палатка</li>
+        <li>Лёгкие напитки в лагере</li>
+        <li>Беруши</li>
+        <li>Бесценные воспоминания</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<svg class="wave" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#wv)"></rect></svg>
+
+<section>
+  <div class="wrap">
+    <div class="head narrow">
+      <p class="eyebrow">Как это было</p>
+      <h2>Кадры с реки</h2>
+      <p>Снимки прошлых сезонов. Даты по кадрам не разложены — это общий архив последних лет.</p>
+    </div>
+    <div class="gal">
+      <figure><img src="media/g-fleet.jpg" alt="Байдарки на воде" loading="lazy" decoding="async"><figcaption>На воде</figcaption></figure>
+      <figure><img src="media/g-fire.jpg" alt="Костёр в лагере" loading="lazy" decoding="async"><figcaption>Костёр</figcaption></figure>
+      <figure><img src="media/g-table.jpg" alt="Общий стол в лагере" loading="lazy" decoding="async"><figcaption>Общий стол</figcaption></figure>
+      <figure><img src="media/g-guitar.jpg" alt="Гитара в лагере" loading="lazy" decoding="async"><figcaption>Гитара</figcaption></figure>
+      <figure><img src="media/g-tents.jpg" alt="Палатки в лесу" loading="lazy" decoding="async"><figcaption>Палатки</figcaption></figure>
+      <figure><img src="media/g-river.jpg" alt="Река и берега" loading="lazy" decoding="async"><figcaption>Река</figcaption></figure>
+      <figure><img src="media/g-kitchen.jpg" alt="Походная кухня" loading="lazy" decoding="async"><figcaption>Походная кухня</figcaption></figure>
+      <figure><img src="media/g-shelter.jpg" alt="Шатёр и застолье" loading="lazy" decoding="async"><figcaption>Шатёр</figcaption></figure>
+      <figure><img src="media/g-village.jpg" alt="Деревня на берегу" loading="lazy" decoding="async"><figcaption>Берега</figcaption></figure>
+      <figure><img src="media/g-bus.jpg" alt="Автобус по дороге на сплав" loading="lazy" decoding="async"><figcaption>Дорога</figcaption></figure>
+      <figure><img src="media/g-gear.jpg" alt="Разложенное снаряжение" loading="lazy" decoding="async"><figcaption>Сборы</figcaption></figure>
+      <figure><img src="media/g-group.jpg" alt="Общая фотография участников" loading="lazy" decoding="async"><figcaption>Все свои</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="next">
+      <div>
+        <p class="eyebrow">Следующий сезон</p>
+        <h2>Сплав 2027</h2>
+        <p>Шестой год подряд. Даты, река и бюджет пока не определены — обычно всё становится понятно к весне, а списки финалим к июлю.</p>
+        <p>Предварительная запись ещё не открыта. Как откроется, напишу в чат участников и здесь появится форма.</p>
+      </div>
+      <div class="closed">
+        <span class="badge"><i></i>Запись закрыта</span>
+        <p class="next-note">Форма появится на этой странице, когда определимся с датами и маршрутом.</p>
+        <div class="btn" aria-disabled="true">Запись откроется весной</div>
+        <p class="next-note">Если мы знакомы и ты хочешь попасть в лист — скажи об этом лично, я запишу.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <svg aria-hidden="true"><use href="#mark"></use></svg>
+      <span class="brand-txt">
+        <span class="brand-name">by @Sorval</span>
+        <span class="brand-by">Свои для своих с 2021 года</span>
+      </span>
+    </div>
+    <div class="foot-lines">
+      <div class="foot-line"><dt>Сплавы</dt><dd>Байдарки, пороги, палатки. Формат, с которого всё началось.</dd></div>
+      <div class="foot-line"><dt>Походы</dt><dd>Пешие маршруты и горы. Рюкзак, ботинки, высота.</dd></div>
+      <div class="foot-line"><dt>Гастро-туры</dt><dd>Усадьбы и кухня. Кровати вместо спальников, шеф вместо каши на костре.</dd></div>
+    </div>
+    <div class="foot-end">
+      <span>Тверская область · Тверца и Волга</span>
+      <span><a href="https://sorvalliny.github.io/astashovo/">Гастро-Терем Асташово →</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  "use strict";
+  var v = document.getElementById("reel"), btn = document.getElementById("reel-sound");
+  if(!v || !btn) return;
+
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(calm){ v.controls = true; btn.hidden = true; return; }
+
+  v.autoplay = true;
+  v.play().catch(function(){ v.controls = true; });
+
+  /* играет только пока виден: не жжём батарею и трафик */
+  if(window.IntersectionObserver){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) v.play().catch(function(){});
+        else v.pause();
+      });
+    }, {threshold: 0.25}).observe(v);
+  }
+
+  btn.addEventListener("click", function(){
+    v.muted = !v.muted;
+    btn.setAttribute("aria-pressed", String(!v.muted));
+    btn.textContent = v.muted ? "Включить звук" : "Выключить звук";
+    if(!v.muted) v.play().catch(function(){});
+  });
+})();
+</script>
+</body>
+</html>
