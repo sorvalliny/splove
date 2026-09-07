@@ -180,13 +180,17 @@ section+section{border-top:1px solid var(--line)}
 .camps{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:2px;overflow:hidden}
 @media(min-width:760px){.camps{grid-template-columns:repeat(3,1fr)}}
-.camp{background:var(--paper);padding:26px 24px;display:flex;flex-direction:column;gap:10px}
+.camp{background:var(--paper);display:flex;flex-direction:column;gap:10px;padding:0 0 24px}
+.camp>:not(.camp-photo){padding-inline:24px}
+.camp .n{margin-top:22px}
+.camp-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
+  background:var(--paper-2);border-bottom:1px solid var(--line)}
 .camp .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.64rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--ember)}
 .camp h3{font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase;font-size:1.24rem;
   letter-spacing:.02em}
 .camp p{font-size:.95rem;color:var(--ink-soft)}
-.camp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;margin-top:auto}
+.camp ul{list-style:none;display:flex;flex-direction:column;margin-top:auto}
 .camp li{padding:7px 0 7px 20px;position:relative;font-size:.9rem;color:var(--ink-soft);
   border-top:1px solid var(--line)}
 .camp li::before{content:"";position:absolute;left:0;top:1em;width:8px;height:1.5px;background:var(--river)}
@@ -408,6 +412,8 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
 
     <div class="camps">
       <article class="camp">
+        <img class="camp-photo" src="media/camp-1.jpg" alt="Шатёр со столами в лагере на первой стоянке"
+             loading="lazy" decoding="async" width="700" height="525">
         <span class="n">Кемп 1 · старт</span>
         <h3>Заезд</h3>
         <p>Трансфер из Москвы, четыре часа до Тверской области. Пеший маршрут до лагеря, заселение в палатки, поход за дровами.</p>
@@ -418,6 +424,8 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
         </ul>
       </article>
       <article class="camp">
+        <img class="camp-photo" src="media/camp-2.jpg" alt="Байдарки на берегу перед отплытием"
+             loading="lazy" decoding="async" width="700" height="525">
         <span class="n">Кемп 2 · главный день</span>
         <h3>Сплав 12–18 км</h3>
         <p>Инструктаж и отплытие. Перекус на воде — бутерброды, фрукты и арбуз. К обеду приходим на новую точку.</p>
@@ -428,6 +436,8 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
         </ul>
       </article>
       <article class="camp">
+        <img class="camp-photo" src="media/camp-3.jpg" alt="Отдых на воде во время сплава"
+             loading="lazy" decoding="async" width="700" height="525">
         <span class="n">Кемп 3 · финал</span>
         <h3>Сплав 12–15 км</h3>
         <p>Последний отрезок реки, походный обед, купание. Крайние тосты за сплав и сбор вещей.</p>
