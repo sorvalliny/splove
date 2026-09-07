@@ -39,7 +39,7 @@ IBM Plex Sans (текст), IBM Plex Mono (цифры и метки). Знак �
 | `media/hero.jpg` | Фон героя |
 | `media/captain.jpg`, `media/camp-wide.jpg` | Крупные кадры в разделах |
 | `media/g-*.jpg` | Галерея |
-| `og.png` | Превью для Телеграма, 1200×630 |
+| `og.jpg` | Превью для Телеграма, 1200×630 |
 
 ## Хроника
 
