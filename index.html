@@ -176,24 +176,23 @@ section+section{border-top:1px solid var(--line)}
   letter-spacing:.1em}
 .growth-cap{font-size:.82rem;color:var(--muted);margin-top:12px}
 
-/* ── лагерь ── */
-.camps{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:2px;overflow:hidden}
-@media(min-width:760px){.camps{grid-template-columns:repeat(3,1fr)}}
-.camp{background:var(--paper);display:flex;flex-direction:column;gap:10px;padding:0 0 24px}
-.camp>:not(.camp-photo){padding-inline:24px}
-.camp .n{margin-top:22px}
-.camp-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;
-  background:var(--paper-2);border-bottom:1px solid var(--line)}
-.camp .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.64rem;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--ember)}
-.camp h3{font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase;font-size:1.24rem;
-  letter-spacing:.02em}
-.camp p{font-size:.95rem;color:var(--ink-soft)}
-.camp ul{list-style:none;display:flex;flex-direction:column;margin-top:auto}
-.camp li{padding:7px 0 7px 20px;position:relative;font-size:.9rem;color:var(--ink-soft);
-  border-top:1px solid var(--line)}
-.camp li::before{content:"";position:absolute;left:0;top:1em;width:8px;height:1.5px;background:var(--river)}
+/* ─── программа: лента этапов ─── */
+.days{display:flex;flex-direction:column;margin-bottom:34px}
+.day-row{display:grid;grid-template-columns:1fr;gap:8px;padding:26px 0;border-top:1px solid var(--line)}
+.day-row:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:760px){.day-row{grid-template-columns:150px 1fr;gap:30px;align-items:start}}
+@media(min-width:980px){.day-row{grid-template-columns:150px 1fr 230px;gap:34px}}
+.day-mark{display:flex;flex-direction:column;gap:3px}
+.day-mark .dw{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--muted)}
+.day-mark .dd{font-family:Oswald,sans-serif;font-size:2.4rem;line-height:.92;color:var(--ember)}
+.day-body h3{font-family:Oswald,sans-serif;font-weight:500;text-transform:uppercase;font-size:1.2rem;
+  letter-spacing:.02em;margin-bottom:8px}
+.day-body p{color:var(--ink-soft);font-size:.97rem}
+.day-body p+p{margin-top:9px}
+.day-photo{display:block;width:100%;max-width:300px;height:auto;aspect-ratio:4/3;object-fit:cover;
+  border:1px solid var(--line);border-radius:2px;margin-top:6px;background:var(--paper-2)}
+@media(min-width:980px){.day-photo{max-width:none;margin-top:4px}}
 
 .zones{display:grid;grid-template-columns:1fr;gap:14px;margin-top:16px}
 @media(min-width:700px){.zones{grid-template-columns:repeat(3,1fr)}}
@@ -410,42 +409,36 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
       <p>Три дня — три разные локации. Между ними идём на байдарках, вещи едут сухими на машине сопровождения. Лагерь ставят и кормят организаторы, грести учат на месте: опыт не нужен.</p>
     </div>
 
-    <div class="camps">
-      <article class="camp">
-        <img class="camp-photo" src="media/camp-1.jpg" alt="Шатёр со столами в лагере на первой стоянке"
+    <div class="days">
+      <article class="day-row">
+        <div class="day-mark"><span class="dw">Старт</span><span class="dd num">01</span></div>
+        <div class="day-body">
+          <h3>Заезд</h3>
+          <p>Трансфер из Москвы, четыре часа до Тверской области. Пеший маршрут до лагеря, заселение в палатки, поход за дровами.</p>
+          <p>Ужин и вступительное слово, костёр с гитарой, отбой после часа ночи.</p>
+        </div>
+        <img class="day-photo" src="media/camp-1.jpg" alt="Шатёр со столами в лагере на первой стоянке"
              loading="lazy" decoding="async" width="700" height="525">
-        <span class="n">Кемп 1 · старт</span>
-        <h3>Заезд</h3>
-        <p>Трансфер из Москвы, четыре часа до Тверской области. Пеший маршрут до лагеря, заселение в палатки, поход за дровами.</p>
-        <ul>
-          <li>Ужин и вступительное слово</li>
-          <li>Костёр, гитара, дринки</li>
-          <li>Отбой после часа ночи</li>
-        </ul>
       </article>
-      <article class="camp">
-        <img class="camp-photo" src="media/camp-2.jpg" alt="Байдарки на берегу перед отплытием"
+      <article class="day-row">
+        <div class="day-mark"><span class="dw">Главный день</span><span class="dd num">02</span></div>
+        <div class="day-body">
+          <h3>Сплав 12–18 км</h3>
+          <p>Инструктаж и отплытие. Перекус на воде — бутерброды, фрукты и арбуз. К обеду приходим на новую точку.</p>
+          <p>Походная баня и купание, лекторий с кинопоказом на проекторе, караоке и свободный микрофон.</p>
+        </div>
+        <img class="day-photo" src="media/camp-2.jpg" alt="Байдарки на берегу перед отплытием"
              loading="lazy" decoding="async" width="700" height="525">
-        <span class="n">Кемп 2 · главный день</span>
-        <h3>Сплав 12–18 км</h3>
-        <p>Инструктаж и отплытие. Перекус на воде — бутерброды, фрукты и арбуз. К обеду приходим на новую точку.</p>
-        <ul>
-          <li>Походная баня и купание</li>
-          <li>Лекторий и кинопоказ на проекторе</li>
-          <li>Караоке, свободный микрофон</li>
-        </ul>
       </article>
-      <article class="camp">
-        <img class="camp-photo" src="media/camp-3.jpg" alt="Отдых на воде во время сплава"
+      <article class="day-row">
+        <div class="day-mark"><span class="dw">Финал</span><span class="dd num">03</span></div>
+        <div class="day-body">
+          <h3>Сплав 12–15 км</h3>
+          <p>Последний отрезок реки, походный обед на берегу, купание. Крайние тосты за сплав и сбор вещей.</p>
+          <p>Общая фотография всем составом и трансфер в Москву.</p>
+        </div>
+        <img class="day-photo" src="media/camp-3.jpg" alt="Отдых на воде во время сплава"
              loading="lazy" decoding="async" width="700" height="525">
-        <span class="n">Кемп 3 · финал</span>
-        <h3>Сплав 12–15 км</h3>
-        <p>Последний отрезок реки, походный обед, купание. Крайние тосты за сплав и сбор вещей.</p>
-        <ul>
-          <li>Обед на берегу</li>
-          <li>Общая фотография</li>
-          <li>Трансфер в Москву</li>
-        </ul>
       </article>
     </div>
 
@@ -471,34 +464,6 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
       <img src="media/camp-wide.jpg" alt="Флотилия байдарок на берегу перед отплытием" width="1200" height="900" loading="lazy">
       <figcaption>Сборы перед отплытием</figcaption>
     </figure>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="head narrow">
-      <p class="eyebrow">Программа</p>
-      <h2>Что входило</h2>
-      <p>Взнос закрывал всё: снаряжение, дорогу, лагерь и еду. На месте не нужно было ни за что доплачивать.</p>
-    </div>
-    <div class="cols">
-      <ul class="ticks">
-        <li>Байдарка, весло, спасжилет</li>
-        <li>Палатка, спальник, коврик</li>
-        <li>Трансфер из Москвы и обратно</li>
-        <li>Машина сопровождения — вещи едут сухими</li>
-        <li>Инструкторы и стафф, 5–7 человек</li>
-        <li>Организаторы ставят лагерь и готовят</li>
-      </ul>
-      <ul class="ticks">
-        <li>Питание три раза в день и перекусы на воде</li>
-        <li>Походная баня</li>
-        <li>Шатёр-кухня, костровая зона, туалет-палатка</li>
-        <li>Лёгкие напитки в лагере</li>
-        <li>Беруши</li>
-        <li>Бесценные воспоминания</li>
-      </ul>
-    </div>
   </div>
 </section>
 
@@ -592,6 +557,34 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
         <img src="media/g-group.jpg" alt="Общая фотография участников" loading="lazy" decoding="async">
         <figcaption>Все свои</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head narrow">
+      <p class="eyebrow">Программа</p>
+      <h2>Что входило</h2>
+      <p>Взнос закрывал всё: снаряжение, дорогу, лагерь и еду. На месте не нужно было ни за что доплачивать.</p>
+    </div>
+    <div class="cols">
+      <ul class="ticks">
+        <li>Байдарка, весло, спасжилет</li>
+        <li>Палатка, спальник, коврик</li>
+        <li>Трансфер из Москвы и обратно</li>
+        <li>Машина сопровождения — вещи едут сухими</li>
+        <li>Инструкторы и стафф, 5–7 человек</li>
+        <li>Организаторы ставят лагерь и готовят</li>
+      </ul>
+      <ul class="ticks">
+        <li>Питание три раза в день и перекусы на воде</li>
+        <li>Походная баня</li>
+        <li>Шатёр-кухня, костровая зона, туалет-палатка</li>
+        <li>Лёгкие напитки в лагере</li>
+        <li>Беруши</li>
+        <li>Бесценные воспоминания</li>
+      </ul>
     </div>
   </div>
 </section>
