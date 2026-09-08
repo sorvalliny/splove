@@ -150,32 +150,6 @@ section+section{border-top:1px solid var(--line)}
 .sign{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;text-transform:uppercase;
   letter-spacing:.16em;color:var(--muted);margin-top:18px}
 
-/* ── хроника ── */
-.years{display:flex;flex-direction:column}
-.yr{display:grid;grid-template-columns:1fr;gap:8px;padding:24px 0;border-top:1px solid var(--line);
-  align-items:baseline}
-.yr:last-child{border-bottom:1px solid var(--line)}
-@media(min-width:720px){.yr{grid-template-columns:132px 190px 1fr;gap:28px}}
-.yr-n{font-family:Oswald,sans-serif;font-size:2.5rem;font-weight:500;line-height:.9;color:var(--ember)}
-.yr-meta{display:flex;flex-direction:column;gap:3px}
-.yr-river{font-weight:600;font-size:1rem}
-.yr-count{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.76rem;color:var(--muted);
-  text-transform:uppercase;letter-spacing:.12em}
-.yr-note{color:var(--ink-soft);font-size:.97rem}
-.yr.now .yr-n{color:var(--river)}
-
-/* столбики роста */
-.growth{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;align-items:end;
-  margin-top:34px;padding:22px 20px;background:var(--paper);border:1px solid var(--line);border-radius:2px}
-.bar{display:flex;flex-direction:column;align-items:center;gap:9px}
-.bar .col{width:100%;background:linear-gradient(180deg,var(--river),color-mix(in srgb,var(--river) 55%,transparent));
-  border-radius:2px 2px 0 0;min-height:5px}
-.bar.peak .col{background:linear-gradient(180deg,var(--ember),color-mix(in srgb,var(--ember) 55%,transparent))}
-.bar .v{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500;font-size:.94rem}
-.bar .y{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;color:var(--muted);
-  letter-spacing:.1em}
-.growth-cap{font-size:.82rem;color:var(--muted);margin-top:12px}
-
 /* ─── программа: лента этапов ─── */
 .days{display:flex;flex-direction:column;margin-bottom:34px}
 .day-row{display:grid;grid-template-columns:1fr;gap:8px;padding:26px 0;border-top:1px solid var(--line)}
@@ -217,18 +191,58 @@ ul.ticks li::before{content:"";position:absolute;left:2px;top:1.2em;width:9px;he
 .wide-shot figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.63rem;
   text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:10px;text-align:center}
 
-/* ── галерея ── */
-.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:640px){.gal{grid-template-columns:repeat(3,1fr)}}
-@media(min-width:960px){.gal{grid-template-columns:repeat(4,1fr)}}
-.gal figure{margin:0;display:flex;flex-direction:column;gap:8px}
-.gal img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2px;
+/* ── архив по годам ── */
+.why-photo{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;
+  border:1px solid var(--line-strong);border-radius:2px;box-shadow:var(--shadow)}
+
+.yr-tabs{display:flex;overflow-x:auto;border-bottom:1px solid var(--line-strong);
+  margin-bottom:34px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.yr-tabs::-webkit-scrollbar{display:none}
+.yr-tab{flex:0 0 auto;display:flex;flex-direction:column;gap:5px;align-items:flex-start;
+  background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;
+  padding:10px 0 14px;margin-right:30px;color:var(--muted);
+  transition:color .15s ease, border-color .15s ease}
+.yr-tab:last-child{margin-right:0}
+.yr-tab .t-y{font-family:Oswald,sans-serif;font-size:1.72rem;font-weight:500;line-height:1;
+  letter-spacing:.02em}
+.yr-tab .t-r{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;
+  text-transform:uppercase;letter-spacing:.14em;white-space:nowrap}
+.yr-tab:hover{color:var(--ink-soft)}
+.yr-tab.on{color:var(--ember);border-bottom-color:var(--ember)}
+.yr-tab.on .t-r{color:var(--ember-ink)}
+
+.yr-panel{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:900px){.yr-panel{grid-template-columns:300px 1fr;gap:48px;align-items:start}}
+.yr-panel[hidden]{display:none}
+.yr-story{display:flex;flex-direction:column;gap:14px}
+.yr-story p{color:var(--ink-soft);font-size:.98rem}
+.yr-facts{display:grid;grid-template-columns:repeat(2,1fr);margin:0 0 4px;
+  border-top:1px solid var(--line)}
+.yf{padding:11px 0}
+.yf:nth-child(odd){border-right:1px solid var(--line);padding-right:16px}
+.yf:nth-child(even){padding-left:16px}
+.yf:nth-child(n+3){border-top:1px solid var(--line)}
+.yf dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6rem;text-transform:uppercase;
+  letter-spacing:.16em;color:var(--muted);margin-bottom:4px}
+.yf dd{margin:0;font-size:.98rem;font-weight:500}
+
+.yr-gal{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:640px){.yr-gal{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.yr-gal{grid-column:2}}
+@media(min-width:1100px){.yr-gal{grid-template-columns:repeat(4,1fr)}}
+.yr-gal figure{margin:0;display:flex;flex-direction:column;gap:8px}
+.yr-gal img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:2px;
   border:1px solid var(--line);background:var(--paper-2);
   transition:transform .25s ease, border-color .25s ease}
-.gal figure:hover img{transform:translateY(-3px);border-color:var(--line-strong)}
-@media (prefers-reduced-motion: reduce){.gal figure:hover img{transform:none}}
-.gal figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6rem;
+.yr-gal figure:hover img{transform:translateY(-3px);border-color:var(--line-strong)}
+@media (prefers-reduced-motion: reduce){.yr-gal figure:hover img{transform:none}}
+.yr-gal figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6rem;
   text-transform:uppercase;letter-spacing:.13em;color:var(--muted);line-height:1.5}
+
+.yr-reel{max-width:250px;margin:0 0 22px}
+@media(min-width:900px){.yr-reel{grid-column:2;max-width:220px}}
+.yr-empty{color:var(--muted);font-size:.95rem;border:1px dashed var(--line-strong);border-radius:2px;
+  padding:22px 24px}
 
 /* ── 2027 ── */
 .next{background:var(--paper);border:1px solid var(--line-strong);border-radius:2px;
@@ -330,16 +344,8 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
 
 <section>
   <div class="wrap captain">
-    <figure class="reel">
-      <div class="reel-frame">
-        <video id="reel" poster="media/reel-poster.jpg" muted loop playsinline preload="metadata"
-               aria-label="Видео со сплава СПLOVE 2026">
-          <source src="media/splove-2026.mp4" type="video/mp4">
-        </video>
-        <button class="sound" id="reel-sound" type="button" aria-pressed="false">Включить звук</button>
-      </div>
-      <figcaption>СПLOVE 2026 · Тверская область</figcaption>
-    </figure>
+    <img class="why-photo" src="media/why-photo.jpg" alt="Вечер у костра в лагере"
+         width="620" height="827" loading="lazy" decoding="async">
     <div>
       <p class="eyebrow" style="margin-bottom:14px">Почему этот формат</p>
       <blockquote class="quote">
@@ -353,53 +359,6 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
 </section>
 
 <svg class="wave" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#wv)"></rect></svg>
-
-<section>
-  <div class="wrap">
-    <div class="head narrow">
-      <p class="eyebrow">Хроника</p>
-      <h2>Как росла флотилия</h2>
-      <p>Каждый год кто-то приводит своего человека — и на следующий год он уже приводит своего. Так двадцать превратились в полсотни.</p>
-    </div>
-
-    <div class="years">
-      <article class="yr">
-        <span class="yr-n num">2022</span>
-        <span class="yr-meta"><span class="yr-river">Тверца</span><span class="yr-count">первый заплыв</span></span>
-        <span class="yr-note">Меня позвали — и всё началось. Никакой организации, просто река и хорошая идея.</span>
-      </article>
-      <article class="yr">
-        <span class="yr-n num">2023</span>
-        <span class="yr-meta"><span class="yr-river">Тверца</span><span class="yr-count">20 человек</span></span>
-        <span class="yr-note">Первый раз, когда я собирал своих сам. Двадцать человек, палатки, костёр, гитара.</span>
-      </article>
-      <article class="yr">
-        <span class="yr-n num">2024</span>
-        <span class="yr-meta"><span class="yr-river">Волга</span><span class="yr-count">32 человека</span></span>
-        <span class="yr-note">Сменили реку и выросли в полтора раза. Появилась баня и передвижной лагерь на три точки.</span>
-      </article>
-      <article class="yr">
-        <span class="yr-n num">2025</span>
-        <span class="yr-meta"><span class="yr-river">Волга</span><span class="yr-count">52 человека</span></span>
-        <span class="yr-note">Рекорд по людям. Три кемпа, зоны под разный темперамент, караоке и лекторий.</span>
-      </article>
-      <article class="yr now">
-        <span class="yr-n num">2026</span>
-        <span class="yr-meta"><span class="yr-river">Тверская область</span><span class="yr-count">50 человек</span></span>
-        <span class="yr-note">14–16 августа. Половина списка — новички, которых привели свои. Семь пар.</span>
-      </article>
-    </div>
-
-    <div class="growth" role="img" aria-label="Рост числа участников: 2023 — 20, 2024 — 32, 2025 — 52, 2026 — 50">
-      <div class="bar"><span class="v">—</span><span class="col" style="height:14px"></span><span class="y">2022</span></div>
-      <div class="bar"><span class="v">20</span><span class="col" style="height:58px"></span><span class="y">2023</span></div>
-      <div class="bar"><span class="v">32</span><span class="col" style="height:92px"></span><span class="y">2024</span></div>
-      <div class="bar peak"><span class="v">52</span><span class="col" style="height:150px"></span><span class="y">2025</span></div>
-      <div class="bar"><span class="v">50</span><span class="col" style="height:144px"></span><span class="y">2026</span></div>
-    </div>
-    <p class="growth-cap">За 2022 год числа нет: тогда это был не сбор, а просто поездка вдвоём. Данные за 2023–2025 — со слов капитана, за 2026 — по списку участников.</p>
-  </div>
-</section>
 
 <section>
   <div class="wrap">
@@ -469,94 +428,209 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
 
 <svg class="wave" aria-hidden="true" focusable="false"><rect width="100%" height="16" fill="url(#wv)"></rect></svg>
 
-<section>
+<section id="archive">
   <div class="wrap">
     <div class="head narrow">
-      <p class="eyebrow">Сезон 2026</p>
-      <h2>Кадры с реки</h2>
-      <p>Снято на сплаве 14–16 августа 2026 года.</p>
-    </div>
-    <div class="gal">
-      <figure>
-        <img src="media/y26-fleet.jpg" alt="Сцепленная флотилия байдарок на воде" loading="lazy" decoding="async">
-        <figcaption>Вся флотилия</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-mist.jpg" alt="Утренний туман на реке" loading="lazy" decoding="async">
-        <figcaption>Туман на реке</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-guitar.jpg" alt="Гитара у костра" loading="lazy" decoding="async">
-        <figcaption>Гитара</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-fire.jpg" alt="Костёр ночью" loading="lazy" decoding="async">
-        <figcaption>Костёр</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-dawn.jpg" alt="Рассвет в сосновом лесу" loading="lazy" decoding="async">
-        <figcaption>Рассвет</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-church.jpg" alt="Церковь на берегу реки" loading="lazy" decoding="async">
-        <figcaption>Берега</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-tents.jpg" alt="Палатки в лагере" loading="lazy" decoding="async">
-        <figcaption>Лагерь</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-raft.jpg" alt="Флотилия байдарок сверху" loading="lazy" decoding="async">
-        <figcaption>Связка</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-meadow.jpg" alt="Туман над лугом на рассвете" loading="lazy" decoding="async">
-        <figcaption>Утро</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-paddles.jpg" alt="Вёсла на закате" loading="lazy" decoding="async">
-        <figcaption>Вёсла</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-sparks.jpg" alt="Искры костра в кронах деревьев" loading="lazy" decoding="async">
-        <figcaption>Искры</figcaption>
-      </figure>
-      <figure>
-        <img src="media/y26-group.jpg" alt="Общая фотография участников сезона" loading="lazy" decoding="async">
-        <figcaption>Все свои</figcaption>
-      </figure>
+      <p class="eyebrow">Архив</p>
+      <h2>Пять сезонов</h2>
+      <p>Переключайся по годам. Что известно про каждый — то и написано: за первые два сезона остались только река и число людей.</p>
     </div>
 
-    <div class="head narrow" style="margin-top:64px">
-      <p class="eyebrow">Прошлые годы</p>
-      <h2>Из архива</h2>
-      <p>Кадры прошлых сезонов. По годам не разложены — точную привязку не восстановить.</p>
+    <div class="yr-tabs" role="tablist" aria-label="Сезоны сплава">
+      <button class="yr-tab" role="tab" id="tab-2022"
+              aria-controls="panel-2022" aria-selected="false"
+              tabindex="-1">
+        <span class="t-y">2022</span><span class="t-r">Начало</span>
+      </button>
+      <button class="yr-tab" role="tab" id="tab-2023"
+              aria-controls="panel-2023" aria-selected="false"
+              tabindex="-1">
+        <span class="t-y">2023</span><span class="t-r">20 человек</span>
+      </button>
+      <button class="yr-tab" role="tab" id="tab-2024"
+              aria-controls="panel-2024" aria-selected="false"
+              tabindex="-1">
+        <span class="t-y">2024</span><span class="t-r">32 человека</span>
+      </button>
+      <button class="yr-tab" role="tab" id="tab-2025"
+              aria-controls="panel-2025" aria-selected="false"
+              tabindex="-1">
+        <span class="t-y">2025</span><span class="t-r">52 человека</span>
+      </button>
+      <button class="yr-tab on" role="tab" id="tab-2026"
+              aria-controls="panel-2026" aria-selected="true"
+              tabindex="0">
+        <span class="t-y">2026</span><span class="t-r">50 человек</span>
+      </button>
     </div>
-    <div class="gal">
-      <figure>
-        <img src="media/g-fleet.jpg" alt="Байдарки на воде" loading="lazy" decoding="async">
-        <figcaption>На воде</figcaption>
+
+    <div class="yr-panel" role="tabpanel" id="panel-2022" aria-labelledby="tab-2022" hidden>
+      <div class="yr-story">
+        <dl class="yr-facts">
+          <div class="yf"><dt>Река</dt><dd>Тверца</dd></div>
+          <div class="yf"><dt>Формат</dt><dd>поездка вдвоём</dd></div>
+        </dl>
+        <p>Меня позвали в заплыв по Тверце — и я поехал. Никакого сбора и организации: просто река и хорошая идея.</p>
+        <p>С этого началась традиция, которой к 2026 году исполнилось пять лет.</p>
+      </div>
+      <p class="yr-empty">Фотографий этого сезона у меня не сохранилось. Если у тебя есть — пришли, добавлю сюда.</p>
+    </div>
+    <div class="yr-panel" role="tabpanel" id="panel-2023" aria-labelledby="tab-2023" hidden>
+      <div class="yr-story">
+        <dl class="yr-facts">
+          <div class="yf"><dt>Река</dt><dd>Тверца</dd></div>
+          <div class="yf"><dt>Человек</dt><dd>20</dd></div>
+        </dl>
+        <p>Двадцать человек на Тверце — та же река, что и годом раньше, но уже своим составом.</p>
+      </div>
+      <p class="yr-empty">Фотографий этого сезона у меня не сохранилось. Если у тебя есть — пришли, добавлю сюда.</p>
+    </div>
+    <div class="yr-panel" role="tabpanel" id="panel-2024" aria-labelledby="tab-2024" hidden>
+      <div class="yr-story">
+        <dl class="yr-facts">
+          <div class="yf"><dt>Даты</dt><dd>2–4 августа</dd></div>
+          <div class="yf"><dt>Река</dt><dd>Волга</dd></div>
+          <div class="yf"><dt>Человек</dt><dd>32</dd></div>
+          <div class="yf"><dt>Взнос</dt><dd>14 500 ₽</dd></div>
+        </dl>
+        <p>Сменили реку: с Тверцы на Волгу. Старт от Старицы, финиш в селе Архангельское.</p>
+        <p>Тридцать километров за два дня — восемнадцать и двенадцать. Двенадцать трёхместных лодок, машина сопровождения, походная баня.</p>
+      </div>
+      <div class="yr-gal">
+        <figure>
+          <img src="media/y24-drone.jpg" alt="Байдарки на воде с высоты" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>На воде</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y24-sunset.jpg" alt="Закат над рекой" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Закат</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y24-shelter.jpg" alt="Шатёр с подсветкой ночью" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Ночной лагерь</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y24-group.jpg" alt="Общая фотография на берегу" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Все свои</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="yr-panel" role="tabpanel" id="panel-2025" aria-labelledby="tab-2025" hidden>
+      <div class="yr-story">
+        <dl class="yr-facts">
+          <div class="yf"><dt>Даты</dt><dd>15–17 августа</dd></div>
+          <div class="yf"><dt>Река</dt><dd>Волга</dd></div>
+          <div class="yf"><dt>Человек</dt><dd>52</dd></div>
+          <div class="yf"><dt>Взнос</dt><dd>23 500 ₽</dd></div>
+        </dl>
+        <p>Рекорд по людям: пятьдесят два. Маршрут тот же — Старица и до Архангельского, восемнадцать-двадцать километров в главный день и лёгкий финальный отрезок.</p>
+        <p>Появился бар на полсотни позиций: джин, виски, ром, настойки, вино и пиво.</p>
+      </div>
+      <div class="yr-gal">
+        <figure>
+          <img src="media/y25-fleet.jpg" alt="Байдарки на воде" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>На воде</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-table.jpg" alt="Общий стол в лагере" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Общий стол</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-fire.jpg" alt="Костёр в лагере" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Костёр</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-moon.jpg" alt="Костёр и гитара под луной" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Вечер</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-tents.jpg" alt="Палатки в лесу" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Палатки</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-shelter.jpg" alt="Шатёр и застолье" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Шатёр</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-village.jpg" alt="Деревня на берегу реки" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Берега</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y25-group.jpg" alt="Общая фотография участников" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Все свои</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="yr-panel" role="tabpanel" id="panel-2026" aria-labelledby="tab-2026">
+      <div class="yr-story">
+        <dl class="yr-facts">
+          <div class="yf"><dt>Даты</dt><dd>14–16 августа</dd></div>
+          <div class="yf"><dt>Река</dt><dd>Тверская область</dd></div>
+          <div class="yf"><dt>Человек</dt><dd>50</dd></div>
+          <div class="yf"><dt>Новичков</dt><dd>21</dd></div>
+        </dl>
+        <p>Пятый сезон. Пятьдесят человек, из них двадцать один — новички, которых привели свои. Семь пар.</p>
+      </div>
+      <figure class="reel yr-reel">
+        <div class="reel-frame">
+          <video id="reel" poster="media/reel-poster.jpg" muted loop playsinline preload="metadata"
+                 aria-label="Видео со сплава СПLOVE 2026">
+            <source src="media/splove-2026.mp4" type="video/mp4">
+          </video>
+          <button class="sound" id="reel-sound" type="button" aria-pressed="false">Включить звук</button>
+        </div>
+        <figcaption>Ролик сезона</figcaption>
       </figure>
-      <figure>
-        <img src="media/g-table.jpg" alt="Общий стол в лагере" loading="lazy" decoding="async">
-        <figcaption>Общий стол</figcaption>
-      </figure>
-      <figure>
-        <img src="media/g-tents.jpg" alt="Палатки в лесу" loading="lazy" decoding="async">
-        <figcaption>Палатки</figcaption>
-      </figure>
-      <figure>
-        <img src="media/g-kitchen.jpg" alt="Походная кухня" loading="lazy" decoding="async">
-        <figcaption>Кухня</figcaption>
-      </figure>
-      <figure>
-        <img src="media/g-shelter.jpg" alt="Шатёр и застолье" loading="lazy" decoding="async">
-        <figcaption>Шатёр</figcaption>
-      </figure>
-      <figure>
-        <img src="media/g-group.jpg" alt="Общая фотография участников" loading="lazy" decoding="async">
-        <figcaption>Все свои</figcaption>
-      </figure>
+      <div class="yr-gal">
+        <figure>
+          <img src="media/y26-fleet.jpg" alt="Сцепленная флотилия байдарок" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Вся флотилия</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-mist.jpg" alt="Утренний туман на реке" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Туман</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-guitar.jpg" alt="Гитара у костра" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Гитара</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-fire.jpg" alt="Костёр ночью" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Костёр</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-dawn.jpg" alt="Рассвет в сосновом лесу" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Рассвет</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-church.jpg" alt="Церковь на берегу" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Берега</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-tents.jpg" alt="Палатки в лагере" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Лагерь</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-raft.jpg" alt="Флотилия сверху" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Связка</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-meadow.jpg" alt="Туман над лугом" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Утро</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-paddles.jpg" alt="Вёсла на закате" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Вёсла</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-sparks.jpg" alt="Искры костра в кронах" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Искры</figcaption>
+        </figure>
+        <figure>
+          <img src="media/y26-group.jpg" alt="Общая фотография сезона" loading="lazy" decoding="async" width="620" height="827">
+          <figcaption>Все свои</figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -630,6 +704,37 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  "use strict";
+  var tabs = [].slice.call(document.querySelectorAll('.yr-tab'));
+  if(!tabs.length) return;
+  var panels = tabs.map(function(t){ return document.getElementById(t.getAttribute('aria-controls')); });
+
+  function show(i, focus){
+    tabs.forEach(function(t, k){
+      var on = k === i;
+      t.classList.toggle('on', on);
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      if(panels[k]) panels[k].hidden = !on;
+    });
+    if(focus) tabs[i].focus();
+  }
+
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ show(i); });
+    t.addEventListener('keydown', function(e){
+      var k = e.key, n = null;
+      if(k === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if(k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      else if(k === 'Home') n = 0;
+      else if(k === 'End') n = tabs.length - 1;
+      if(n !== null){ e.preventDefault(); show(n, true); }
+    });
+  });
+})();
+</script>
 <script>
 (function(){
   "use strict";
