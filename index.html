@@ -192,9 +192,6 @@ ul.ticks li::before{content:"";position:absolute;left:2px;top:1.2em;width:9px;he
   text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-top:10px;text-align:center}
 
 /* ── архив по годам ── */
-.why-photo{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;
-  border:1px solid var(--line-strong);border-radius:2px;box-shadow:var(--shadow)}
-
 .yr-tabs{display:flex;overflow-x:auto;border-bottom:1px solid var(--line-strong);
   margin-bottom:34px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .yr-tabs::-webkit-scrollbar{display:none}
@@ -239,8 +236,6 @@ ul.ticks li::before{content:"";position:absolute;left:2px;top:1.2em;width:9px;he
 .yr-gal figcaption{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6rem;
   text-transform:uppercase;letter-spacing:.13em;color:var(--muted);line-height:1.5}
 
-.yr-reel{max-width:250px;margin:0 0 22px}
-@media(min-width:900px){.yr-reel{grid-column:2;max-width:220px}}
 .yr-empty{color:var(--muted);font-size:.95rem;border:1px dashed var(--line-strong);border-radius:2px;
   padding:22px 24px}
 
@@ -344,8 +339,16 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
 
 <section>
   <div class="wrap captain">
-    <img class="why-photo" src="media/why-photo.jpg" alt="Вечер у костра в лагере"
-         width="620" height="827" loading="lazy" decoding="async">
+    <figure class="reel">
+      <div class="reel-frame">
+        <video id="reel" poster="media/reel-poster.jpg" muted loop playsinline preload="metadata"
+               aria-label="Видео со сплава СПLOVE 2026">
+          <source src="media/splove-2026.mp4" type="video/mp4">
+        </video>
+        <button class="sound" id="reel-sound" type="button" aria-pressed="false">Включить звук</button>
+      </div>
+      <figcaption>СПLOVE 2026 · Тверская область</figcaption>
+    </figure>
     <div>
       <p class="eyebrow" style="margin-bottom:14px">Почему этот формат</p>
       <blockquote class="quote">
@@ -571,16 +574,6 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:46px 0 5
         </dl>
         <p>Пятый сезон. Пятьдесят человек, из них двадцать один — новички, которых привели свои. Семь пар.</p>
       </div>
-      <figure class="reel yr-reel">
-        <div class="reel-frame">
-          <video id="reel" poster="media/reel-poster.jpg" muted loop playsinline preload="metadata"
-                 aria-label="Видео со сплава СПLOVE 2026">
-            <source src="media/splove-2026.mp4" type="video/mp4">
-          </video>
-          <button class="sound" id="reel-sound" type="button" aria-pressed="false">Включить звук</button>
-        </div>
-        <figcaption>Ролик сезона</figcaption>
-      </figure>
       <div class="yr-gal">
         <figure>
           <img src="media/y26-fleet.jpg" alt="Сцепленная флотилия байдарок" loading="lazy" decoding="async" width="620" height="827">
